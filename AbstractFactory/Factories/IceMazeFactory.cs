@@ -1,6 +1,5 @@
 ﻿using System;
 using AbstractFactory.MapSites;
-using AbstractFactory.MazeLogic;
 
 namespace AbstractFactory.Factories
 {
@@ -9,19 +8,19 @@ namespace AbstractFactory.Factories
         public override Room MakeRoom(int number)
         {
             Console.WriteLine($"Создана ледяная комната №{number}");
-            return new Room(number);
+            return new IceRoom(number);
         }
 
         public override Wall MakeWall()
         {
             Console.WriteLine("Создана ледяная стена!");
-            return new Wall();
+            return new IceWall();
         }
 
         public override Door MakeDoor(Room r1, Room r2)
         {
             Console.WriteLine("Создана ледяная дверь!");
-            return new Door(r1, r2);
+            return new IceDoor(r1, r2);
         }
     }
 }

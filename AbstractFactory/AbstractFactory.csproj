@@ -50,6 +50,11 @@
     <Compile Include="Factories\IceMazeFactory.cs" />
     <Compile Include="Factories\MazeFactory.cs" />
     <Compile Include="MapSites\Door.cs" />
+    <Compile Include="MapSites\EnchantedRoom.cs" />
+    <Compile Include="MapSites\IceDoor.cs" />
+    <Compile Include="MapSites\IceRoom.cs" />
+    <Compile Include="MapSites\IceWall.cs" />
+    <Compile Include="MapSites\MagicDoor.cs" />
     <Compile Include="MapSites\MapSite.cs" />
     <Compile Include="MapSites\Room.cs" />
     <Compile Include="MapSites\TrapDoor.cs" />

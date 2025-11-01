@@ -12,11 +12,14 @@ namespace AbstractFactory.MazeLogic
         public void AddRoom(Room room)
         {
             if (room == null)
+            {
                 throw new ArgumentNullException(nameof(room));
+            }
 
             if (_rooms.Any(r => r.Number == room.Number))
+            {
                 throw new ArgumentException("Комната с таким номером уже существует.");
-
+            }
             _rooms.Add(room);
         }
 
