@@ -15,21 +15,41 @@ namespace AbstractFactory.MapSites
             _isOpen = false;
         }
 
-        public void Open() => _isOpen = true;
+        public void Open()
+        {
+            _isOpen = true;
+        }
 
         public Room OtherSideFrom(Room room)
         {
             if (room == null)
+            {
                 throw new ArgumentNullException(nameof(room));
-            return room == _room1 ? _room2 : _room1;
+            }
+            
+            if (room == _room1)
+            {
+                return _room2;
+            }
+
+            if (room == _room2)
+            {
+                return _room1;
+            }
+                
+            throw new ArgumentException("Эта комната не связана с данной дверью.");
         }
 
         public override void Enter()
         {
             if (_isOpen)
+            {
                 Console.WriteLine("Вы прошли через дверь.");
+            }
             else
+            {
                 Console.WriteLine("Дверь закрыта.");
+            }
         }
     }
 }
