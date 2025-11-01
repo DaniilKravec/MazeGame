@@ -11,9 +11,7 @@ namespace AbstractFactory.MapSites
         public Room(int number)
         {
             if (number <= 0)
-            {
                 throw new ArgumentException("Номер комнаты должен быть положительным.");
-            }
             _number = number;
         }
 
@@ -22,9 +20,7 @@ namespace AbstractFactory.MapSites
         public void SetSide(int direction, MapSite site)
         {
             if (site == null)
-            {
                 throw new ArgumentNullException(nameof(site));
-            }
             _sides[direction] = site;
         }
 

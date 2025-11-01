@@ -14,13 +14,9 @@ namespace AbstractFactory.MapSites
         public override void Enter()
         {
             if (_isActive)
-            {
                 Console.WriteLine("Вы провалились в люк!");
-            }
             else
-            {
                 Console.WriteLine("Люк закрыт и безопасен.");
-            }
         }
     }
 }
