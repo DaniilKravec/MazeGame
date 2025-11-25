@@ -13,3 +13,4 @@ namespace AbstractFactory.Factories
         public virtual TrapDoor MakeTrapDoor() => new TrapDoor();
     }
 }
+
