@@ -1,7 +1,18 @@
-﻿namespace Prototype.MapSites
+﻿using System;
+
+namespace Prototype.MapSites
 {
     public class Wall : MapSite, IPrototype<Wall>
     {
+        public Wall()
+        {
+        }
+
+       
+        public void Initialize()
+        {
+        }
+
         public Wall Clone()
         {
             return new Wall();
@@ -9,8 +20,9 @@
 
         public override void Enter()
         {
-            System.Console.WriteLine("Это стена.");
+            Console.WriteLine("Это клонированная стена.");
         }
     }
 }
+
 

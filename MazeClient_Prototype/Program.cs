@@ -1,20 +1,31 @@
-﻿using Prototype.Factory;
+﻿using System;
 using Prototype.MapSites;
-using System;
+using Prototype.PrototypeFactory;
 
 class Program
 {
     static void Main()
     {
-        MazePrototypeFactory factory =
-            new MazePrototypeFactory(new Room(10), new Wall(), new Door(new Room(1), new Room(2)));
+        
+        Room roomProto = new Room(0); 
+        Wall wallProto = new Wall();
+        Door doorProto = new Door(); 
 
-        var room1 = factory.MakeRoom();
-        var room2 = factory.MakeRoom();
-        var door = factory.MakeDoor(room1, room2);
+        
+        MazePrototypeFactory factory = new MazePrototypeFactory(roomProto, wallProto, doorProto);
 
-        Console.WriteLine("Лабиринт создан с помощью Прототипа!");
+       
+        Room room1 = factory.MakeRoom();
+        room1.Initialize(1);
+        Room room2 = factory.MakeRoom();
+        room2.Initialize(2);
 
-        Console.ReadLine();
+        Door door = factory.MakeDoor(room1, room2); 
+
+        Wall wall1 = factory.MakeWall();
+        Wall wall2 = factory.MakeWall();
+
+        Console.WriteLine("Лабиринт создан.");
     }
 }
+

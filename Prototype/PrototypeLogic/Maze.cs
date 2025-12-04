@@ -1,28 +1,29 @@
-﻿using Prototype.MapSites;
-using System;
+﻿using System.Linq;
+using Prototype.MapSites;
 using System.Collections.Generic;
 
 namespace Prototype.PrototypeLogic
 {
-    public class Maze : IPrototype<Maze>
+    public class Maze
     {
-        private readonly List<Room> _rooms = new List<Room>();
+        private readonly List<Room> rooms = new List<Room>();
 
         public void AddRoom(Room room)
         {
-            if (room == null)
-                throw new ArgumentNullException(nameof(room));
-            this._rooms.Add(room);
+            rooms.Add(room);
+        }
+
+        public Room RoomNo(int number)
+        {
+            return rooms.First(r => r.Number == number);
         }
 
         public Maze Clone()
         {
-            Maze clone = new Maze();
-            foreach (var room in this._rooms)
-            {
-                clone.AddRoom(room.Clone());
-            }
-            return clone;
+            var m = new Maze();
+            foreach (var room in rooms)
+            m.AddRoom(room.Clone());
+            return m;
         }
     }
 }

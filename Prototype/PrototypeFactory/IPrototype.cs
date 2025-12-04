@@ -1,4 +1,4 @@
-﻿namespace Prototype
+﻿namespace Prototype.MapSites
 {
     public interface IPrototype<T>
     {
